@@ -1,0 +1,30 @@
+<form class="company-form" #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" placeholder="Company-Name"  name="CompanyName" #CompanyName="ngModel" [(ngModel)]="companyService.selectedCompanyPortfolio.CompanyName">
+      <div class="validation-error" *ngIf="CompanyName.invalid && CompanyName.dirty">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Address"   name="Address" #Address="ngModel" [(ngModel)]="companyService.selectedCompanyPortfolio.Address">
+    </div>
+  </div>
+  <div class="form-group">
+      <input type="email" class="form-control" placeholder="Email-ID"  name="EmailID" #EmailID="ngModel" [(ngModel)]="companyService.selectedCompanyPortfolio.EmailID">
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="number"class="form-control" placeholder="Phone-No."  name="PhoneNo" #PhoneNo="ngModel" [(ngModel)]="companyService.selectedCompanyPortfolio.PhoneNo">
+      </div>
+      <div class="form-group col-md-6">
+          <input class="form-control" placeholder="ContactPersonName" name="ContactPerson" #ContactPerson="ngModel" [(ngModel)]="companyService.selectedCompanyPortfolio.ContactPerson">
+      </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-8">
+      <button type="submit" class="btn btn-lg btn-block btn-info"><i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+    <div class="form-group col-md-4">
+        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(companyForm)"><i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<table class="table table-sm table-hover" id="portfolio">
+  <tr>
+    <th>CompanyName</th>
+    <th>PortfolioName</th>
+    <th>Description</th>
+    <th>CoverImage</th>
+    <th>YoutubeVideo</th>
+  </tr>
+  <tr *ngFor="let portfolio of portfolioService.portfolioList">
+    <td>{{portfolio.CompanyName}}</td>
+    <td>{{portfolio.PortFolioName}}</td>
+    <td>{{portfolio.Description}}</td>
+    <td>{{portfolio.CoverImage}}</td>
+    <td>{{portfolio.YoutubeVideo}}</td>
+    
+  </tr>
+</table>
+<button type="button">View PortfolioList</button>
+

@@ -1,0 +1,17 @@
+<table class="table table-sm table-hover" id="company">
+        <tr>
+          <th>CompanyName</th>
+          <th>Address</th>
+          <th>EmailID</th>
+          <th>Phone-No.</th>
+          <th>Contact-Person</th>
+        </tr>
+        <tr *ngFor="let company of companyService.companyList">
+          <td>{{company.CompanyName}}</td>
+          <td>{{company.Address}}</td>
+          <td>{{company.EmailID}}</td>
+          <td>{{company.PhoneNo}}</td>
+          <td>{{company.ContactPerson}}</td>
+          <td><button type="button" (click)="onSelect(company)"><i class="fa fa-plus-square">Add-Portfolio</i></button></td>
+        </tr>
+</table>

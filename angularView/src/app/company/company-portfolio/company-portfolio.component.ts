@@ -11,6 +11,7 @@ import { NgForm } from '../../../../node_modules/@angular/forms';
   styleUrls: ['./company-portfolio.component.css']
 })
 export class CompanyPortfolioComponent implements OnInit {
+  message:string;
 
   constructor(private companyService:CompanyPortfolioService,private portfolioService:PortfolioService) { }
 
@@ -38,7 +39,10 @@ export class CompanyPortfolioComponent implements OnInit {
       this.portfolioService.companyName=form.controls.CompanyName.value;
       this.resetForm(form);
       //this.toastr.success('New Record Added Successfully');
-    })
-  }
+    }, err => {
+      this.message = "CompanyName Already Exists";
+    }
+  )
+}
 
 }

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Http.ExceptionHandling;
 
-namespace APIApplication.ExLogger
+namespace ExLogger
 {
     public class ExceptionManagerApi : ExceptionLogger
     {
@@ -21,7 +21,8 @@ namespace APIApplication.ExLogger
             var log4NetConfigDirectory = AppDomain.CurrentDomain.RelativeSearchPath ?? AppDomain.CurrentDomain.BaseDirectory;
 
             //var log4NetConfigFilePath = Path.Combine(log4NetConfigDirectory, "log4net.config");  
-            var log4NetConfigFilePath = "C:\\Users\\yashb\\Music\\Angular-5-With-Web-API-CRUD-Application\\WebAPI\\WebAPI\\Exlogger\\Log4net.config";
+            var log4NetConfigFilePath = "C:\\Users\\SAURABH\\Desktop\\dotNET\\PortFolio\\APIApplication\\APIApplication\\ExLogger\\Log4net.config";
+            //var log4NetConfigFilePath = "C:\\Users\\yashb\\Music\\Angular-5-With-Web-API-CRUD-Application\\WebAPI\\WebAPI\\Exlogger\\Log4net.config";
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(log4NetConfigFilePath));
         }
         public override void Log(ExceptionLoggerContext context)

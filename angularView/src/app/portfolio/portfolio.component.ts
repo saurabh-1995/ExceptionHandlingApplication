@@ -11,6 +11,7 @@ import { Portfolio} from '../company/shared/portfolio.model';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
+  message:string;
   sub: any;
   companyName: any;
   portfolioName:any;
@@ -48,7 +49,11 @@ export class PortfolioComponent implements OnInit {
     this.portfolioService.gettblPortfolioDetails();
     
       //this.toastr.success('New Record Added Successfully');
-    })
+    },
+    err => {
+      this.message = "PortfolioName Already Exists";
+    }
+  )
   }
   showForEdit(port: Portfolio) {
     this.portfolioService.selectedPortfolio = Object.assign({}, port);;
